@@ -1,29 +1,30 @@
 def report_total_profit(sales):
-    result = 0
-    for s in sales:
-        result = result + (s.price * s.quantity)
-    return result
+    """
+    Implement me:
+        `sales` parameter is a list of 'Sale' object (more info see `sale_model.py`).
+        If a given variable 's' is of type 'Sale' you can say access to its properties like: s.vendor, s.model, s.price or s.quantity.
+        This function should return a numberic value for the tatal profit for the sales.
+        Bare in mind that one item has 'price' and 'quantity', meaing that if the item's price is 100 but there were 5 unit sold (quantity)
+        We need to say (100 x 5) = 500.
+        See first test case in `test.py` file for an example of how the return type should look like."""
+    pass
 
 def report_top_five_model(sales):
-    report = {}
-    for s in sales:
-        if s.model in report:
-            t = report[s.model]
-            report[s.model] = t + (s.price * s.quantity)
-        else:
-            report[s.model] = s.price * s.quantity
-    ls = [(k,v) for k,v in report.items()]
-    ls.sort(reverse=True, key= lambda a: a[1])
-    ls = list(map(lambda a: a[0], ls))
-    return ls[:5]
-
+    """
+        Implement me:
+            `sales` parameter is a list of 'Sale' object (more info see `sale_model.py`).
+            If a given variable 's' is of type 'Sale' you can say access to its properties like: s.vendor, s.model, s.price or s.quantity.
+            This function should return a list of strings, sorted desc, meaning if "Pixel XL" is the most sold model it should be first.
+            e.g. ["Pixel XL", "Moto E", "Xiaomi M1", "Sony XL", "Blackberry LTD"] where Moto E is the second most sold and Xiaomi M1 the third.
+            See second test case in `test.py` file for an example of how the return data should look like."""
+    pass
+     
 def report_profit_per_vendor(sales):
-    vendors = {}
-    for s in sales:
-        if s.vendor in vendors:
-            t = vendors[s.vendor]
-            vendors[s.vendor] = t + (s.price * s.quantity)
-        else:
-            vendors[s.vendor] = s.price * s.quantity
-    return vendors 
-
+    """
+    Implement me:
+        `sales` parameter is a list of 'Sale' object (more info see `sale_model.py`).
+        If a given variable 's' is of type 'Sale' you can say access to its properties like: s.vendor, s.model, s.price or s.quantity.
+        This function should return a dictionary with name of vendor as key and value as the profit.
+        See third test case in `test.py` file for an example of how the return data should look like. 
+        """
+    pass
