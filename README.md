@@ -4,9 +4,10 @@
 
 Develop an reporter web app, where you upload a csv file for all the sales 
 and the reporter should calculate:
-    - Total profit report
-    - Top 5 most sold models
-    - Profit per vendors
+
+- Total profit report
+- Top 5 most sold models
+- Profit per vendors
 
 Your task is to give implementation to the following functions in `report_service.py` file:
    `report_total_profit` 
