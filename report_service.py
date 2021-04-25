@@ -55,21 +55,4 @@ def report_profit_per_vendor(sales):
             vendors_and_profit[sale.vendor] = sale.price * sale.quantity
 
     return vendors_and_profit
-        
-
-
-sales = [
-    Sale('Moto E (1st generation)', 'Motorola Mobility', 460, 2),
-    Sale('OnePlus 8', 'OnePlus', 260, 2),
-    Sale('Pixel 2/XL', 'Google', 430, 9),
-    Sale('Xiaomi Mi 9/SE', 'Xiaomi', 276, 3),
-    Sale('Samsung Galaxy Note Edge', 'Samsung Electronics', 272, 4),
-    Sale('Moto E3', 'Motorola Mobility', 287, 2),
-    Sale('OnePlus 9 Pro', 'OnePlus', 426, 1),
-    Sale('LG K31', 'LG Electronics', 421, 1)
-]
-
-##print(report_total_profit(sales))
-##print(report_top_five_model(sales))
-##print(report_profit_per_vendor(sales))
 
