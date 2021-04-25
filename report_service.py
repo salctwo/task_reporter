@@ -1,3 +1,5 @@
+from sale_model import Sale
+
 def report_total_profit(sales):
     """
     Implement me:
@@ -7,7 +9,12 @@ def report_total_profit(sales):
         Bare in mind that one item has 'price' and 'quantity', meaing that if the item's price is 100 but there were 5 unit sold (quantity)
         We need to say (100 x 5) = 500.
         See first test case in `test.py` file for an example of how the return type should look like."""
-    pass
+
+    total_profit = 0
+    for sale in sales:
+        total_profit += sale.price * sale.quantity
+
+    return total_profit
 
 def report_top_five_model(sales):
     """
@@ -17,7 +24,19 @@ def report_top_five_model(sales):
             This function should return a list of strings, sorted desc, meaning if "Pixel XL" is the most sold model it should be first.
             e.g. ["Pixel XL", "Moto E", "Xiaomi M1", "Sony XL", "Blackberry LTD"] where Moto E is the second most sold and Xiaomi M1 the third.
             See second test case in `test.py` file for an example of how the return data should look like."""
-    pass
+    list_sales = []
+    model_and_price = ()
+    top_models = []
+    
+    for sale in sales:
+        model_and_price = ((sale.price * sale.quantity), sale.model)
+        list_sales.append(model_and_price)
+
+    copy_list = sorted(list_sales, reverse=True)
+    for model in copy_list:
+        top_models.append(model[1])
+
+    return top_models[:5]
      
 def report_profit_per_vendor(sales):
     """
@@ -27,4 +46,30 @@ def report_profit_per_vendor(sales):
         This function should return a dictionary with name of vendor as key and value as the profit.
         See third test case in `test.py` file for an example of how the return data should look like. 
         """
-    pass
+
+    vendors_and_profit = {}
+    for sale in sales:
+        if sale.vendor in vendors_and_profit:
+            vendors_and_profit[sale.vendor] += sale.price * sale.quantity
+        else:
+            vendors_and_profit[sale.vendor] = sale.price * sale.quantity
+
+    return vendors_and_profit
+        
+
+
+sales = [
+    Sale('Moto E (1st generation)', 'Motorola Mobility', 460, 2),
+    Sale('OnePlus 8', 'OnePlus', 260, 2),
+    Sale('Pixel 2/XL', 'Google', 430, 9),
+    Sale('Xiaomi Mi 9/SE', 'Xiaomi', 276, 3),
+    Sale('Samsung Galaxy Note Edge', 'Samsung Electronics', 272, 4),
+    Sale('Moto E3', 'Motorola Mobility', 287, 2),
+    Sale('OnePlus 9 Pro', 'OnePlus', 426, 1),
+    Sale('LG K31', 'LG Electronics', 421, 1)
+]
+
+##print(report_total_profit(sales))
+##print(report_top_five_model(sales))
+##print(report_profit_per_vendor(sales))
+

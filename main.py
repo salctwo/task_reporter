@@ -5,7 +5,7 @@ from report_controller import Controller
 app = Flask(__name__)
 controller = Controller(app)
 
-port = os.getenv('PORT', 8081)
+port = os.getenv('PORT', 8083)
 
 app.run(host='0.0.0.0', port=port)
 
