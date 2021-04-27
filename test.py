@@ -11,7 +11,8 @@ def test(title, result, expected):
 sales = [
     Sale('Moto E (1st generation)', 'Motorola Mobility', 460, 2),
     Sale('OnePlus 8', 'OnePlus', 260, 2),
-    Sale('Pixel 2/XL', 'Google', 430, 9),
+    Sale('Pixel 2/XL', 'Google', 430, 4),
+    Sale('Pixel 2/XL', 'Google', 430, 5),
     Sale('Xiaomi Mi 9/SE', 'Xiaomi', 276, 3),
     Sale('Samsung Galaxy Note Edge', 'Samsung Electronics', 272, 4),
     Sale('Moto E3', 'Motorola Mobility', 287, 2),
